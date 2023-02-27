@@ -1,3 +1,5 @@
+const colors = require('./src/styles/colors.js')
+
 module.exports = {
     content: [
       './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -16,6 +18,7 @@ module.exports = {
           '3xl': '768px',
           '4xl': '896px',
         },
+        colors,
         fontFamily: {
           spoqa: ['pretendard', 'sans-serif'],
         },
