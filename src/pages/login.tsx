@@ -1,8 +1,18 @@
 import React from "react";
 import { Inter } from "@next/font/google";
+import { useDialog } from "../components/useDialog/useDialog";
+import VocieLogin from "../components/login/vocieLogin";
 const inter = Inter({ subsets: ["latin"] });
 
 const Login = () => {
+  const { openSidebar } = useDialog();
+
+  const handleClick = () => {
+    openSidebar(<VocieLogin />);
+  };
+
+  console.debug("s");
+
   return (
     <>
       <div className="flex flex-col justify-center h-screen py-12 sm:px-6 lg:px-8">
@@ -14,7 +24,7 @@ const Login = () => {
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
-            <form className="space-y-6" action="#" method="POST">
+            <div className="space-y-6">
               <div>
                 <label
                   htmlFor="아이디"
@@ -90,13 +100,13 @@ const Login = () => {
 
               <div>
                 <button
-                  type="submit"
+                  onClick={handleClick}
                   className="flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary hover:bg-white hover:text-primary hover:border-primary hover:border-2px"
                 >
                   Voice Sign in
                 </button>
               </div>
-            </form>
+            </div>
 
             <div className="mt-6">
               <div className="relative">
